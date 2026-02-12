@@ -1,0 +1,83 @@
+[
+    {
+        "title": "DagsBokApp – ToDo / Diary App",
+        "type": "backend",
+        "description": "Konsolbaserad C#-applikation för att skapa och hantera dagboksanteckningar och uppgifter.",
+        "tech": [
+            "C#",
+            ".NET Console Application",
+            "Objektorienterad programmering",
+            "Filhantering"
+        ],
+        "highlights": [
+            "Skapa, visa och ta bort anteckningar",
+            "Markera uppgifter som färdiga",
+            "Spara data mellan sessioner",
+            "Tydlig konsolmeny"
+        ],
+        "links": {
+            "github": "https://github.com/TSOLER89/DagsBokApp"
+        }
+    },
+    {
+        "title": "Rock Paper Scissor – Konsolspel",
+        "type": "backend",
+        "description": "Konsolbaserat sten–sax–påse-spel som visar logik, kontrollflöden och interaktiv programmering.",
+        "tech": [
+            "C#",
+            ".NET Console Application",
+            "If / switch-logik",
+            "Random-klass"
+        ],
+        "highlights": [
+            "Spela mot datorn",
+            "Poängräkning",
+            "Användarvänligt flöde",
+            "Tydlig kodstruktur"
+        ],
+        "links": {
+            "github": "https://github.com/TSOLER89/RockPaperScissor"
+        }
+    },
+    {
+        "title": "Caffe-Retro-2021 – Mini Web API",
+        "type": "backend",
+        "description": "Mini Web API i C# för hantering av cafédatabas med CRUD-funktionalitet.",
+        "tech": [
+            "C#",
+            "ASP.NET Core Web API",
+            "JSON",
+            "CRUD"
+        ],
+        "highlights": [
+            "Create, Read, Update, Delete",
+            "JSON-baserad datalagring",
+            "Testning via Postman",
+            "Strukturerad backend-kod"
+        ],
+        "links": {
+            "github": "https://github.com/TSOLER89/Caffe-Retro-2021"
+        }
+    },
+    {
+        "title": "Gala Start – Grupprojekt",
+        "description": "Ett grupprojekt skapat tillsammans med klasskamrater där vi utvecklade en webbapplikation för att hantera evenemang och biljetter. Projektet fokuserade på samarbete, Git, och moderna webbutvecklingstekniker.",
+        "tech": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Node.js",
+            "Git",
+            "GitHub"
+        ],
+        "highlights": [
+            "Skapade en interaktiv användarupplevelse med JavaScript",
+            "Implementerade backend-funktioner med Node.js",
+            "Lärde oss teamarbete och versionshantering med Git och GitHub"
+        ],
+        "links": {
+            "github": "https://github.com/sbrindmark/gala-start-main.git",
+            "live": ""
+        }
+    }
+]
