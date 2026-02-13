@@ -1,4 +1,4 @@
-import { removeFloatingLogos } from "../ui/floatingLogos.js";
+import { removeFloatingLogos } from "../ui/FloatingLogos.js";
 
 export function renderAbout() {
     const app = document.getElementById("app");
