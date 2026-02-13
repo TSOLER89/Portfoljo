@@ -41,6 +41,9 @@ export function renderAbout() {
                 <span class="skill">SQL</span>
                 <span class="skill">Git</span>
                 <span class="skill">GitHub</span>
+                <span class="skill">Agil Utveckling</span>
+                <span class="skill">REST API</span>
+                <span class="skill">Web Design</span>
             </div>
         </section>
     `;
