@@ -1,17 +1,32 @@
 export function showModal(message) {
+
+    //skapa overlay för modalen
+
+    const overlay = document.createElement("div");
+    overlay.classList.add("modal-overlay");
+
+    //skapat modal box innehål
     const modal = document.createElement("div");
-    modal.className = "modal-overlay";
+    modal.classList.add("modal-box");
+
     modal.innerHTML = `
-        <div class="modal-content">
-            <p>${message}</p>
-            <button class="btn">Stäng</button>
-        </div>
+        <p>${message}</p>
+        <button class="btn">Stäng</button>
     `;
 
-    document.body.appendChild(modal);
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
 
-    modal.querySelector("button").onclick = () => modal.remove();
-    modal.onclick = (e) => {
-        if (e.target === modal) modal.remove();
-    };
+    //stäng-knapp
+
+    modal.querySelector(".modal-close").addEventListener()("click", () => {
+        document.body.removeChild(overlay);
+    });
+
+    //stänga modalen när man klickar utanför modal-boxen
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            document.body.removeChild(overlay);
+        }
+    });
 }

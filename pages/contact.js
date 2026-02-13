@@ -42,13 +42,14 @@ export function renderContact() {
 
         if (res.ok) {
         feedback.textContent = data.success;
-        showModal("Ditt meddelande har skickats!");
+        showModal("Tack för ditt meddelande! Jag återkommer så snart som möjligt.");
         form.reset();
+        
         } else {
         feedback.textContent = data.error;
         
         }
-        
+
         } catch (error) {
             feedback.textContent = "Ett fel inträffade. Försök igen.";
             showModal("Ett fel inträffade. Försök igen.");
