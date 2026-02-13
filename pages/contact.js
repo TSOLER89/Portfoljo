@@ -22,9 +22,15 @@ export function renderContact() {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const name = name.value.trim();
-        const email = email.value.trim();
-        const message = message.value.trim();
+        const namInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const messageInput = document.getElementById("message");
+
+        const name = namInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+
+        try{
 
         const res = await fetch("http://localhost:3000/send-email", {
             method: "POST",
@@ -33,8 +39,19 @@ export function renderContact() {
         });
 
         const data = await res.json();
+
+        if (res.ok) {
         feedback.textContent = data.success;
         showModal("Ditt meddelande har skickats!");
         form.reset();
+        } else {
+        feedback.textContent = data.error;
+        
+        }
+        
+        } catch (error) {
+            feedback.textContent = "Ett fel inträffade. Försök igen.";
+            showModal("Ett fel inträffade. Försök igen.");
+        }
     });
 }
