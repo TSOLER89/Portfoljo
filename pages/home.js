@@ -1,4 +1,4 @@
-import { createFloatingLogos } from "../ui/floatingLogos.js";
+import { createFloatingLogos } from "../ui/FloatingLogos.js";
 
 export function renderHome() {
     const app = document.getElementById("app");
