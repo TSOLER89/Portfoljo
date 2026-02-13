@@ -1,32 +1,39 @@
-export function showModal(message) {
+export function showModal(message = "Tack för ditt meddelande!") {
+    // Ta bort eventuell befintlig modal
+    const existing = document.querySelector(".modal-overlay");
+    if (existing) existing.remove();
 
-    //skapa overlay för modalen
-
+    // Skapa overlay
     const overlay = document.createElement("div");
-    overlay.classList.add("modal-overlay");
+    overlay.className = "modal-overlay";
 
-    //skapat modal box innehål
-    const modal = document.createElement("div");
-    modal.classList.add("modal-box");
+    // Skapa modal
+    overlay.innerHTML = `
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Meddelande">
+      <h3>Klart!</h3>
+      <p>${message}</p>
+      <button type="button" class="modal-close">Stäng</button>
+    </div>
+  `;
 
-    modal.innerHTML = `
-        <p>${message}</p>
-        <button class="btn">Stäng</button>
-    `;
-
-    overlay.appendChild(modal);
     document.body.appendChild(overlay);
 
-    //stäng-knapp
+    const closeBtn = overlay.querySelector(".modal-close");
 
-    modal.querySelector(".modal-close").addEventListener()("click", () => {
-        document.body.removeChild(overlay);
-    });
+    // STÄNG: knapp
+    closeBtn.addEventListener("click", () => overlay.remove());
 
-    //stänga modalen när man klickar utanför modal-boxen
+    // STÄNG: klick utanför modalen
     overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) {
-            document.body.removeChild(overlay);
-        }
+        if (e.target === overlay) overlay.remove();
     });
+
+    // STÄNG: ESC
+    const onKeyDown = (e) => {
+        if (e.key === "Escape") {
+            overlay.remove();
+            document.removeEventListener("keydown", onKeyDown);
+        }
+    };
+    document.addEventListener("keydown", onKeyDown);
 }

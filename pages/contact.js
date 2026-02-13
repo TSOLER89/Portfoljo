@@ -6,7 +6,7 @@ export function renderContact() {
     app.innerHTML = `
         <section class="contact-section">
             <h2>Kontakt</h2>
-            <form id="contactForm">
+            <form id="contact-form">
                 <input type="text" id="name" placeholder="Namn" required>
                 <input type="email" id="email" placeholder="E-post" required>
                 <textarea id="message" placeholder="Meddelande" required></textarea>
@@ -15,44 +15,30 @@ export function renderContact() {
             </form>
         </section>
     `;
-
-    const form = document.getElementById("contactForm");
-    const feedback = document.getElementById("formFeedback");
+    const form = document.querySelector("#contact-form");
+    if (!form) return;
 
     form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+        e.preventDefault(); // <-- viktigast
 
-        const namInput = document.getElementById("name");
-        const emailInput = document.getElementById("email");
-        const messageInput = document.getElementById("message");
+        const formData = new FormData(form);
 
-        const name = namInput.value.trim();
-        const email = emailInput.value.trim();
-        const message = messageInput.value.trim();
+        try {
+            const res = await fetch("/send-email", {
+                method: "POST",
+                body: formData,
+            });
 
-        try{
+            if (!res.ok) {
+                showModal("Något gick fel. Försök igen.");
+                return;
+            }
 
-        const res = await fetch("http://localhost:3000/send-email", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name, email, message })
-        });
+            form.reset();
+            showModal("Tack för ditt meddelande! Jag återkommer så snart jag kan.");
 
-        const data = await res.json();
-
-        if (res.ok) {
-        feedback.textContent = data.success;
-        showModal("Tack för ditt meddelande! Jag återkommer så snart som möjligt.");
-        form.reset();
-        
-        } else {
-        feedback.textContent = data.error;
-        
-        }
-
-        } catch (error) {
-            feedback.textContent = "Ett fel inträffade. Försök igen.";
-            showModal("Ett fel inträffade. Försök igen.");
+        } catch (err) {
+            showModal("Kunde inte skicka just nu. Kolla din anslutning och försök igen.");
         }
     });
 }
