@@ -46,5 +46,7 @@ export function renderAbout() {
                 <span class="skill">Web Design</span>
             </div>
         </section>
+
+        <section class="about-hobbies"> <p>På fritiden har jag ett stort intresse för <strong>musik</strong>, <strong>dans</strong> och <strong>träning</strong>. Musik hjälper mig att behålla fokus och kreativitet, medan dans ger mig energi och balans vid sidan av studierna.</p> <p>Träning är en viktig del av min vardag och bidrar till både fysisk och mental hälsa. Det hjälper mig att skapa struktur, hålla motivationen uppe och prestera bättre i mina studier. När jag inte studerar eller tränar tycker jag om att umgås med vänner, utforska nya idéer och fortsätta utveckla mina kunskaper inom <strong>programmering</strong>, <strong>webbutveckling</strong> och <strong>design</strong>.</p> </section>
     `;
 }
