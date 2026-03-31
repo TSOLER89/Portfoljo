@@ -18,13 +18,24 @@ export function renderAbout() {
         </section>
 
         <section class="lia-section">
-            <h3>LIA-period</h3>
+            <h3>LIA1-period</h3>
             <div class="lia-timeline">
                 <span class="lia-start">2026-03-30</span>
                 <div class="lia-bar">
                     <div class="lia-progress"></div>
                 </div>
                 <span class="lia-end">2026-06-05</span>
+            </div>
+        </section>
+
+        <section class="lia-section">
+            <h3>LIA2-period</h3>
+            <div class="lia-timeline">
+                <span class="lia-start">2026-12-14</span>
+                <div class="lia-bar">
+                    <div class="lia-progress"></div>
+                </div>
+                <span class="lia-end">2027-05-28</span>
             </div>
         </section>
 
