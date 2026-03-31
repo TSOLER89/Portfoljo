@@ -79,5 +79,29 @@
             "github": "https://github.com/sbrindmark/gala-start-main.git",
             "live": ""
         }
+    },
+    {
+        "title": "TUC Booking System",
+        "description": "Ett modernt bokningssystem för grupprum och resurser byggt med .NET 10 och Blazor. Funktioner inkluderar bokning av rum, användarhantering, adminpanel, autentisering, och e-postfunktionalitet.",
+        "tech": [
+            ".NET 10",
+            "ASP.NET Core",
+            "Blazor Server",
+            "Entity Framework Core",
+            "SQLite",
+            "Bootstrap 5",
+            "JWT",
+            "MailKit"
+        ],
+        "highlights": [
+            "Boka och hantera grupprum",
+            "Rollbaserad inloggning (Admin/User)",
+            "Modern UI med Blazor och Bootstrap",
+            "E-post för lösenordsåterställning",
+            "Swagger-dokumentation för API"
+        ],
+        "links": {
+            "github": "https://github.com/TSOLER89/TucBookingSystem"
+        }
     }
 ]
